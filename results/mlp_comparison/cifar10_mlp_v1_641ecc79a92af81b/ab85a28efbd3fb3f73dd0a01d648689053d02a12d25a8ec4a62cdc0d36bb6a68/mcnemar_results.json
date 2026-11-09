@@ -1,0 +1,65 @@
+{
+  "alpha": 0.05,
+  "decision_method": "exact_two_sided",
+  "multiple_testing_correction": "none",
+  "tables": {
+    "mlp_vs_best_cnn": [
+      [
+        5064,
+        436
+      ],
+      [
+        2855,
+        1645
+      ]
+    ],
+    "mlp_vs_baseline": [
+      [
+        4822,
+        678
+      ],
+      [
+        2263,
+        2237
+      ]
+    ]
+  },
+  "results": [
+    {
+      "comparacao": "MLP × Melhor CNN",
+      "modelo_a": "MLP",
+      "modelo_b": "Melhor CNN",
+      "ambos_acertam": 5064,
+      "somente_a_acerta": 436,
+      "somente_b_acerta": 2855,
+      "ambos_erram": 1645,
+      "discordancias": 3291,
+      "estatistica_exata_min_bc": 436.0,
+      "p_valor_exato": 0.0,
+      "estatistica_chi2_corrigida": 1776.5797629899726,
+      "p_valor_chi2": 0.0,
+      "alpha": 0.05,
+      "rejeita_h0": true,
+      "metodo_decisao": "McNemar exato bilateral",
+      "interpretacao": "Rejeita H₀: há evidência de taxas de acerto diferentes; Melhor CNN apresentou maior acurácia neste teste."
+    },
+    {
+      "comparacao": "MLP × Baseline",
+      "modelo_a": "MLP",
+      "modelo_b": "Baseline",
+      "ambos_acertam": 4822,
+      "somente_a_acerta": 678,
+      "somente_b_acerta": 2263,
+      "ambos_erram": 2237,
+      "discordancias": 2941,
+      "estatistica_exata_min_bc": 678.0,
+      "p_valor_exato": 9.713299901506642e-198,
+      "estatistica_chi2_corrigida": 853.1302278136689,
+      "p_valor_chi2": 1.5172239076991302e-187,
+      "alpha": 0.05,
+      "rejeita_h0": true,
+      "metodo_decisao": "McNemar exato bilateral",
+      "interpretacao": "Rejeita H₀: há evidência de taxas de acerto diferentes; Baseline apresentou maior acurácia neste teste."
+    }
+  ]
+}

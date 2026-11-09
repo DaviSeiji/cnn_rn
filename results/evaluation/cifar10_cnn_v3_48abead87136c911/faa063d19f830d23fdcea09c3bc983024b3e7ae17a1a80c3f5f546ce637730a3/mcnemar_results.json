@@ -1,0 +1,65 @@
+{
+  "alpha": 0.05,
+  "decision_method": "exact_two_sided",
+  "multiple_testing_correction": "none",
+  "tables": {
+    "top1_vs_top2": [
+      [
+        7261,
+        658
+      ],
+      [
+        626,
+        1455
+      ]
+    ],
+    "top1_vs_baseline": [
+      [
+        6586,
+        1333
+      ],
+      [
+        499,
+        1582
+      ]
+    ]
+  },
+  "results": [
+    {
+      "comparacao": "Top-1 × Top-2",
+      "modelo_a": "Top-1",
+      "modelo_b": "Top-2",
+      "ambos_acertam": 7261,
+      "somente_a_acerta": 658,
+      "somente_b_acerta": 626,
+      "ambos_erram": 1455,
+      "discordancias": 1284,
+      "estatistica_exata_min_bc": 626.0,
+      "p_valor_exato": 0.3869776200921702,
+      "estatistica_chi2_corrigida": 0.7484423676012462,
+      "p_valor_chi2": 0.3869698349180719,
+      "alpha": 0.05,
+      "rejeita_h0": false,
+      "metodo_decisao": "McNemar exato bilateral",
+      "interpretacao": "Não rejeita H₀: não há evidência suficiente de diferença nas taxas de acerto. Isso não demonstra equivalência."
+    },
+    {
+      "comparacao": "Top-1 × Baseline",
+      "modelo_a": "Top-1",
+      "modelo_b": "Baseline",
+      "ambos_acertam": 6586,
+      "somente_a_acerta": 1333,
+      "somente_b_acerta": 499,
+      "ambos_erram": 1582,
+      "discordancias": 1832,
+      "estatistica_exata_min_bc": 499.0,
+      "p_valor_exato": 1.847775629976324e-87,
+      "estatistica_chi2_corrigida": 378.7603711790393,
+      "p_valor_chi2": 2.3165893860030168e-84,
+      "alpha": 0.05,
+      "rejeita_h0": true,
+      "metodo_decisao": "McNemar exato bilateral",
+      "interpretacao": "Rejeita H₀: há evidência de taxas de acerto diferentes; Top-1 apresentou maior acurácia neste teste."
+    }
+  ]
+}

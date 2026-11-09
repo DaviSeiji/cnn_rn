@@ -1,0 +1,369 @@
+{
+  "identity": {
+    "version": 1,
+    "study_name": "cifar10_cnn_v3_48abead87136c911",
+    "test": {
+      "dataset": "CIFAR10",
+      "split": "official_test",
+      "size": 10000,
+      "classes": [
+        "airplane",
+        "automobile",
+        "bird",
+        "cat",
+        "deer",
+        "dog",
+        "frog",
+        "horse",
+        "ship",
+        "truck"
+      ],
+      "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)",
+      "targets_sha256": "a5df9ed6f395827dd69906fe5ac740be70395ca9d841974d4351818628b48bb6",
+      "batch_size": 128,
+      "order": "SequentialSampler"
+    },
+    "alpha": 0.05,
+    "models": {
+      "Top-1": {
+        "run_id": "e16f9794dadf33d23c72947b15b80d51f72b6035eff0104c739ea94e24f54d97",
+        "sha256": "d4d7d091f2b2006435634f23944e8133727ec83ac4b1a08ff212b4e9c8b27da1"
+      },
+      "Top-2": {
+        "run_id": "edab08d9d9a0b6cf6c50edb21843217f196fec8d67c82c1914971671309f047c",
+        "sha256": "09593b15c47276ec12db039380cff33e75e6d95fb0d0516170f06532af9313b8"
+      },
+      "Baseline": {
+        "run_id": "76cfe812d7f016705c8d92b6561b7c8bd4f69fff688bf9b9627ec523cd1913c3",
+        "sha256": "30dd7e473d9915374c0d3f622fa62cef285c2e8a14148eec21b271b7a54fe70b"
+      }
+    }
+  },
+  "model_information": {
+    "Top-1": {
+      "trial": 21,
+      "run_id": "e16f9794dadf33d23c72947b15b80d51f72b6035eff0104c739ea94e24f54d97",
+      "checkpoint_path": "results\\models\\e16f9794dadf33d23c72947b15b80d51f72b6035eff0104c739ea94e24f54d97\\attempt-8b7515de84ae4924af6441e54e4dcf03\\complete.pt",
+      "checkpoint_sha256": "d4d7d091f2b2006435634f23944e8133727ec83ac4b1a08ff212b4e9c8b27da1",
+      "run_config": {
+        "architecture": {
+          "batch_norm": true,
+          "dropout": 0.1632081513046253,
+          "fc_layers": [
+            512,
+            512
+          ],
+          "filters": [
+            128,
+            128,
+            128
+          ],
+          "kernel_size": 3,
+          "num_blocks": 3
+        },
+        "data": {
+          "train": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+            "size": 45000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          },
+          "validation": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+            "size": 5000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          }
+        },
+        "pipeline_version": 3,
+        "training": {
+          "batch_size": 128,
+          "loss": {
+            "label_smoothing": 0.0,
+            "name": "CrossEntropyLoss",
+            "reduction": "mean",
+            "weight": null
+          },
+          "max_epochs": 30,
+          "optimizer": "RMSprop",
+          "optimizer_params": {
+            "alpha": 0.99,
+            "capturable": false,
+            "centered": false,
+            "differentiable": false,
+            "eps": 1e-08,
+            "foreach": null,
+            "lr": 0.00013127236120214395,
+            "maximize": false,
+            "momentum": 0,
+            "weight_decay": 0
+          },
+          "patience": 5,
+          "seed": 42,
+          "selection": "minimum_val_loss"
+        }
+      },
+      "topology": "ConfigurableCNN(\n  (features): Sequential(\n    (0): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Dropout2d(p=0.1632081513046253, inplace=False)\n    (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (7): ReLU()\n    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (9): Dropout2d(p=0.1632081513046253, inplace=False)\n    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (12): ReLU()\n    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (14): Dropout2d(p=0.1632081513046253, inplace=False)\n  )\n  (classifier): Sequential(\n    (0): Flatten(start_dim=1, end_dim=-1)\n    (1): Linear(in_features=2048, out_features=512, bias=True)\n    (2): ReLU()\n    (3): Dropout(p=0.1632081513046253, inplace=False)\n    (4): Linear(in_features=512, out_features=512, bias=True)\n    (5): ReLU()\n    (6): Dropout(p=0.1632081513046253, inplace=False)\n    (7): Linear(in_features=512, out_features=10, bias=True)\n  )\n)",
+      "trainable_parameters": 1616394,
+      "validation_accuracy": 0.8014,
+      "validation_loss": 0.6070033957004547,
+      "best_epoch": 22,
+      "epochs_ran": 27
+    },
+    "Top-2": {
+      "trial": 28,
+      "run_id": "edab08d9d9a0b6cf6c50edb21843217f196fec8d67c82c1914971671309f047c",
+      "checkpoint_path": "results\\models\\edab08d9d9a0b6cf6c50edb21843217f196fec8d67c82c1914971671309f047c\\attempt-9bbbffee09e14898aa1859c958486a7b\\complete.pt",
+      "checkpoint_sha256": "09593b15c47276ec12db039380cff33e75e6d95fb0d0516170f06532af9313b8",
+      "run_config": {
+        "architecture": {
+          "batch_norm": true,
+          "dropout": 0.15563089829354904,
+          "fc_layers": [
+            512,
+            512
+          ],
+          "filters": [
+            128,
+            128,
+            32
+          ],
+          "kernel_size": 3,
+          "num_blocks": 3
+        },
+        "data": {
+          "train": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+            "size": 45000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          },
+          "validation": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+            "size": 5000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          }
+        },
+        "pipeline_version": 3,
+        "training": {
+          "batch_size": 128,
+          "loss": {
+            "label_smoothing": 0.0,
+            "name": "CrossEntropyLoss",
+            "reduction": "mean",
+            "weight": null
+          },
+          "max_epochs": 30,
+          "optimizer": "RMSprop",
+          "optimizer_params": {
+            "alpha": 0.99,
+            "capturable": false,
+            "centered": false,
+            "differentiable": false,
+            "eps": 1e-08,
+            "foreach": null,
+            "lr": 0.00020096902044204216,
+            "maximize": false,
+            "momentum": 0,
+            "weight_decay": 0
+          },
+          "patience": 5,
+          "seed": 42,
+          "selection": "minimum_val_loss"
+        }
+      },
+      "topology": "ConfigurableCNN(\n  (features): Sequential(\n    (0): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Dropout2d(p=0.15563089829354904, inplace=False)\n    (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (7): ReLU()\n    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (9): Dropout2d(p=0.15563089829354904, inplace=False)\n    (10): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (11): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (12): ReLU()\n    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (14): Dropout2d(p=0.15563089829354904, inplace=False)\n  )\n  (classifier): Sequential(\n    (0): Flatten(start_dim=1, end_dim=-1)\n    (1): Linear(in_features=512, out_features=512, bias=True)\n    (2): ReLU()\n    (3): Dropout(p=0.15563089829354904, inplace=False)\n    (4): Linear(in_features=512, out_features=512, bias=True)\n    (5): ReLU()\n    (6): Dropout(p=0.15563089829354904, inplace=False)\n    (7): Linear(in_features=512, out_features=10, bias=True)\n  )\n)",
+      "trainable_parameters": 719082,
+      "validation_accuracy": 0.7956,
+      "validation_loss": 0.5994018855333328,
+      "best_epoch": 25,
+      "epochs_ran": 30
+    },
+    "Baseline": {
+      "trial": null,
+      "run_id": "76cfe812d7f016705c8d92b6561b7c8bd4f69fff688bf9b9627ec523cd1913c3",
+      "checkpoint_path": "results\\models\\76cfe812d7f016705c8d92b6561b7c8bd4f69fff688bf9b9627ec523cd1913c3\\legacy-import-3965409ac67b4f46b9de47c886bb411c\\complete.pt",
+      "checkpoint_sha256": "30dd7e473d9915374c0d3f622fa62cef285c2e8a14148eec21b271b7a54fe70b",
+      "run_config": {
+        "architecture": {
+          "batch_norm": false,
+          "dropout": 0.0,
+          "fc_layers": [
+            128
+          ],
+          "filters": [
+            32,
+            64
+          ],
+          "kernel_size": 3,
+          "num_blocks": 2
+        },
+        "data": {
+          "train": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+            "size": 45000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          },
+          "validation": {
+            "classes": [
+              "airplane",
+              "automobile",
+              "bird",
+              "cat",
+              "deer",
+              "dog",
+              "frog",
+              "horse",
+              "ship",
+              "truck"
+            ],
+            "dataset": "CIFAR10",
+            "drop_last": false,
+            "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+            "size": 5000,
+            "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+            "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+          }
+        },
+        "pipeline_version": 3,
+        "training": {
+          "batch_size": 128,
+          "loss": {
+            "label_smoothing": 0.0,
+            "name": "CrossEntropyLoss",
+            "reduction": "mean",
+            "weight": null
+          },
+          "max_epochs": 30,
+          "optimizer": "Adam",
+          "optimizer_params": {
+            "amsgrad": false,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "capturable": false,
+            "decoupled_weight_decay": false,
+            "differentiable": false,
+            "eps": 1e-08,
+            "foreach": null,
+            "fused": null,
+            "lr": 0.001,
+            "maximize": false,
+            "weight_decay": 0
+          },
+          "patience": 5,
+          "seed": 42,
+          "selection": "minimum_val_loss"
+        }
+      },
+      "topology": "ConfigurableCNN(\n  (features): Sequential(\n    (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): ReLU()\n    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (4): ReLU()\n    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  )\n  (classifier): Sequential(\n    (0): Flatten(start_dim=1, end_dim=-1)\n    (1): Linear(in_features=4096, out_features=128, bias=True)\n    (2): ReLU()\n    (3): Linear(in_features=128, out_features=10, bias=True)\n  )\n)",
+      "trainable_parameters": 545098,
+      "validation_accuracy": 0.7066,
+      "validation_loss": 0.8578775114059448,
+      "best_epoch": 6,
+      "epochs_ran": 11
+    }
+  },
+  "test_metrics": [
+    {
+      "modelo": "Top-1",
+      "acuracia_teste": 0.7919,
+      "loss_teste": 0.6247768390655517,
+      "acertos": 7919,
+      "total": 10000,
+      "parametros_treinaveis": 1616394,
+      "acuracia_validacao": 0.8014
+    },
+    {
+      "modelo": "Top-2",
+      "acuracia_teste": 0.7887,
+      "loss_teste": 0.6223136296749116,
+      "acertos": 7887,
+      "total": 10000,
+      "parametros_treinaveis": 719082,
+      "acuracia_validacao": 0.7956
+    },
+    {
+      "modelo": "Baseline",
+      "acuracia_teste": 0.7085,
+      "loss_teste": 0.862250658607483,
+      "acertos": 7085,
+      "total": 10000,
+      "parametros_treinaveis": 545098,
+      "acuracia_validacao": 0.7066
+    }
+  ]
+}

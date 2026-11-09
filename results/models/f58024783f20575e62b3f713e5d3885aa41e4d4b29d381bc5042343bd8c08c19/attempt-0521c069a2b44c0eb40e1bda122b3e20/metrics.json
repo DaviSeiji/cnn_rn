@@ -1,0 +1,183 @@
+{
+  "schema_version": 3,
+  "status": "complete",
+  "run_id": "f58024783f20575e62b3f713e5d3885aa41e4d4b29d381bc5042343bd8c08c19",
+  "run_config": {
+    "architecture": {
+      "batch_norm": true,
+      "dropout": 0.007797399829228169,
+      "fc_layers": [
+        128,
+        256
+      ],
+      "filters": [
+        32,
+        64,
+        128
+      ],
+      "kernel_size": 3,
+      "num_blocks": 3
+    },
+    "data": {
+      "train": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+        "size": 45000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      },
+      "validation": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+        "size": 5000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      }
+    },
+    "pipeline_version": 3,
+    "training": {
+      "batch_size": 64,
+      "loss": {
+        "label_smoothing": 0.0,
+        "name": "CrossEntropyLoss",
+        "reduction": "mean",
+        "weight": null
+      },
+      "max_epochs": 30,
+      "optimizer": "SGD",
+      "optimizer_params": {
+        "dampening": 0,
+        "differentiable": false,
+        "foreach": null,
+        "fused": null,
+        "lr": 0.0028737640174811415,
+        "maximize": false,
+        "momentum": 0.9,
+        "nesterov": false,
+        "weight_decay": 0
+      },
+      "patience": 5,
+      "seed": 42,
+      "selection": "minimum_val_loss"
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.4132558330959744,
+      "train_acc": 0.4864,
+      "val_loss": 1.1684449767112732,
+      "val_acc": 0.5922
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9875924033694797,
+      "train_acc": 0.6507777777777778,
+      "val_loss": 0.9960728353500367,
+      "val_acc": 0.6446
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8379729760064019,
+      "train_acc": 0.7055777777777777,
+      "val_loss": 0.8927479471206665,
+      "val_acc": 0.69
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.7387023774041069,
+      "train_acc": 0.7407333333333334,
+      "val_loss": 0.8022430920600891,
+      "val_acc": 0.727
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6603659026675754,
+      "train_acc": 0.7668222222222222,
+      "val_loss": 0.7768774418354034,
+      "val_acc": 0.732
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.597151359293196,
+      "train_acc": 0.7889777777777778,
+      "val_loss": 0.7406946284294128,
+      "val_acc": 0.747
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.535988323020935,
+      "train_acc": 0.8109777777777778,
+      "val_loss": 0.7119175698280334,
+      "val_acc": 0.7556
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4908525332291921,
+      "train_acc": 0.8281777777777778,
+      "val_loss": 0.8147548414707184,
+      "val_acc": 0.7282
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.4414014718161689,
+      "train_acc": 0.8467555555555556,
+      "val_loss": 0.8214492727279663,
+      "val_acc": 0.7354
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.3967510461171468,
+      "train_acc": 0.8609777777777777,
+      "val_loss": 0.7655265106678009,
+      "val_acc": 0.7522
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.35358171064588756,
+      "train_acc": 0.8760888888888889,
+      "val_loss": 0.7738907668113708,
+      "val_acc": 0.7594
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.31381245459715523,
+      "train_acc": 0.89,
+      "val_loss": 0.7577308408737182,
+      "val_acc": 0.7684
+    }
+  ],
+  "epoch": 7,
+  "epochs_ran": 12,
+  "val_loss": 0.7119175698280334,
+  "val_acc": 0.7556,
+  "stop_reason": "early_stopping",
+  "trainable_parameters": 391562,
+  "checkpoint_path": "results\\models\\f58024783f20575e62b3f713e5d3885aa41e4d4b29d381bc5042343bd8c08c19\\attempt-0521c069a2b44c0eb40e1bda122b3e20\\complete.pt"
+}

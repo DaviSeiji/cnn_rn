@@ -1,0 +1,3 @@
+comparacao,modelo_a,modelo_b,ambos_acertam,somente_a_acerta,somente_b_acerta,ambos_erram,discordancias,estatistica_exata_min_bc,p_valor_exato,estatistica_chi2_corrigida,p_valor_chi2,alpha,rejeita_h0,metodo_decisao,interpretacao
+Top-1 × Top-2,Top-1,Top-2,7261,658,626,1455,1284,626.0,0.3869776200921702,0.7484423676012462,0.3869698349180719,0.05,False,McNemar exato bilateral,Não rejeita H₀: não há evidência suficiente de diferença nas taxas de acerto. Isso não demonstra equivalência.
+Top-1 × Baseline,Top-1,Baseline,6586,1333,499,1582,1832,499.0,1.847775629976324e-87,378.7603711790393,2.3165893860030168e-84,0.05,True,McNemar exato bilateral,Rejeita H₀: há evidência de taxas de acerto diferentes; Top-1 apresentou maior acurácia neste teste.

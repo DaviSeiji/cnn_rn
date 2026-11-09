@@ -1,0 +1,240 @@
+{
+  "schema_version": 3,
+  "status": "complete",
+  "run_id": "2cca374a44abb877a5fcbc009257b6c79e885a3da42275eb94953e9647b08671",
+  "run_config": {
+    "architecture": {
+      "batch_norm": true,
+      "dropout": 0.055991120375614795,
+      "fc_layers": [
+        512
+      ],
+      "filters": [
+        128,
+        64,
+        128,
+        32
+      ],
+      "kernel_size": 3,
+      "num_blocks": 4
+    },
+    "data": {
+      "train": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+        "size": 45000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      },
+      "validation": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+        "size": 5000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      }
+    },
+    "pipeline_version": 3,
+    "training": {
+      "batch_size": 128,
+      "loss": {
+        "label_smoothing": 0.0,
+        "name": "CrossEntropyLoss",
+        "reduction": "mean",
+        "weight": null
+      },
+      "max_epochs": 30,
+      "optimizer": "RMSprop",
+      "optimizer_params": {
+        "alpha": 0.99,
+        "capturable": false,
+        "centered": false,
+        "differentiable": false,
+        "eps": 1e-08,
+        "foreach": null,
+        "lr": 0.00017967230841214887,
+        "maximize": false,
+        "momentum": 0,
+        "weight_decay": 0
+      },
+      "patience": 5,
+      "seed": 42,
+      "selection": "minimum_val_loss"
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.37574855211046,
+      "train_acc": 0.49993333333333334,
+      "val_loss": 1.1157507851600648,
+      "val_acc": 0.603
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.0700127111646864,
+      "train_acc": 0.6198444444444444,
+      "val_loss": 0.9673665591239929,
+      "val_acc": 0.657
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.9521271296607123,
+      "train_acc": 0.6615777777777778,
+      "val_loss": 0.9793654070854187,
+      "val_acc": 0.6628
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8743258714040121,
+      "train_acc": 0.6914666666666667,
+      "val_loss": 0.8038389004707337,
+      "val_acc": 0.7238
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8080316157552931,
+      "train_acc": 0.7152222222222222,
+      "val_loss": 0.8187776530265808,
+      "val_acc": 0.7274
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.756681865617964,
+      "train_acc": 0.7348888888888889,
+      "val_loss": 0.7636608197689057,
+      "val_acc": 0.7328
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.7151497826894124,
+      "train_acc": 0.7475777777777778,
+      "val_loss": 0.734370108127594,
+      "val_acc": 0.7476
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.6761400683297051,
+      "train_acc": 0.7635111111111111,
+      "val_loss": 0.7401909810781478,
+      "val_acc": 0.7414
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.6366257876714071,
+      "train_acc": 0.7756222222222222,
+      "val_loss": 0.7308151312589646,
+      "val_acc": 0.7534
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.6065771987014347,
+      "train_acc": 0.7848,
+      "val_loss": 0.7236847198486328,
+      "val_acc": 0.7542
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.5802947025722928,
+      "train_acc": 0.7948,
+      "val_loss": 0.7314004566192627,
+      "val_acc": 0.7514
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.5506407923592461,
+      "train_acc": 0.807,
+      "val_loss": 0.7697681955337524,
+      "val_acc": 0.7334
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.5203138948122661,
+      "train_acc": 0.8172666666666667,
+      "val_loss": 0.7563260194301605,
+      "val_acc": 0.7538
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.5061284312354194,
+      "train_acc": 0.8204444444444444,
+      "val_loss": 0.741703011894226,
+      "val_acc": 0.7598
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.4836727055920495,
+      "train_acc": 0.8298,
+      "val_loss": 0.7117179811000824,
+      "val_acc": 0.763
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.45891400651931763,
+      "train_acc": 0.8364666666666667,
+      "val_loss": 0.7400678385734558,
+      "val_acc": 0.7586
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.445094207684199,
+      "train_acc": 0.8419333333333333,
+      "val_loss": 0.7235744877099991,
+      "val_acc": 0.7648
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.42587582707934907,
+      "train_acc": 0.8502,
+      "val_loss": 0.8006877226829529,
+      "val_acc": 0.7514
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.40680132525232104,
+      "train_acc": 0.8550444444444445,
+      "val_loss": 0.7279179801464081,
+      "val_acc": 0.7732
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.3900378258864085,
+      "train_acc": 0.8607777777777778,
+      "val_loss": 0.7585056189060211,
+      "val_acc": 0.7672
+    }
+  ],
+  "epoch": 15,
+  "epochs_ran": 20,
+  "val_loss": 0.7117179811000824,
+  "val_acc": 0.763,
+  "stop_reason": "early_stopping",
+  "trainable_parameters": 260010,
+  "checkpoint_path": "results\\models\\2cca374a44abb877a5fcbc009257b6c79e885a3da42275eb94953e9647b08671\\attempt-e7d5977a37fe43e6a9bcbc4ba2f6329f\\complete.pt"
+}

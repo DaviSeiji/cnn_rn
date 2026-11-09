@@ -1,0 +1,4 @@
+modelo,parametros_treinaveis,acuracia_validacao,acuracia_teste
+MLP,1578506,0.5588,0.55
+Melhor CNN,1616394,0.8014,0.7919
+Baseline,545098,0.7066,0.7085

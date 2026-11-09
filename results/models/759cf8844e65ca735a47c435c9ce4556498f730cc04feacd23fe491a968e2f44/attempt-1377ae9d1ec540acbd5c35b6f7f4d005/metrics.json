@@ -1,0 +1,315 @@
+{
+  "schema_version": 3,
+  "status": "complete",
+  "run_id": "759cf8844e65ca735a47c435c9ce4556498f730cc04feacd23fe491a968e2f44",
+  "run_config": {
+    "architecture": {
+      "batch_norm": true,
+      "dropout": 0.2,
+      "fc_layers": [
+        256,
+        128
+      ],
+      "filters": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "kernel_size": 3,
+      "num_blocks": 4
+    },
+    "data": {
+      "train": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "c56f6a25318c9c65f072faff8490724c9054950f5af0d967daa4160b93ffd029",
+        "size": 45000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      },
+      "validation": {
+        "classes": [
+          "airplane",
+          "automobile",
+          "bird",
+          "cat",
+          "deer",
+          "dog",
+          "frog",
+          "horse",
+          "ship",
+          "truck"
+        ],
+        "dataset": "CIFAR10",
+        "drop_last": false,
+        "indices_sha256": "ffce04072b4dc04be36f12a4782477053bc3d8d9a60908013318934dbea9568c",
+        "size": 5000,
+        "targets_sha256": "a3a0d804911c71de4b73015af980e237de5f82da7b1482a8efaf7adcc1722f45",
+        "transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)"
+      }
+    },
+    "pipeline_version": 3,
+    "training": {
+      "batch_size": 128,
+      "loss": {
+        "label_smoothing": 0.0,
+        "name": "CrossEntropyLoss",
+        "reduction": "mean",
+        "weight": null
+      },
+      "max_epochs": 30,
+      "optimizer": "Adam",
+      "optimizer_params": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "capturable": false,
+        "decoupled_weight_decay": false,
+        "differentiable": false,
+        "eps": 1e-08,
+        "foreach": null,
+        "fused": null,
+        "lr": 0.001,
+        "maximize": false,
+        "weight_decay": 0
+      },
+      "patience": 5,
+      "seed": 42,
+      "selection": "minimum_val_loss"
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.7284377759509617,
+      "train_acc": 0.3556888888888889,
+      "val_loss": 1.3249758522033692,
+      "val_acc": 0.5254
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.4363169047673543,
+      "train_acc": 0.47864444444444443,
+      "val_loss": 1.1958976098537446,
+      "val_acc": 0.5694
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.3212289678785536,
+      "train_acc": 0.5228,
+      "val_loss": 1.1165763468742371,
+      "val_acc": 0.6
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.2390104733573066,
+      "train_acc": 0.5555777777777777,
+      "val_loss": 1.0468617658615111,
+      "val_acc": 0.628
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.17515737224155,
+      "train_acc": 0.5823777777777778,
+      "val_loss": 0.9887556807518005,
+      "val_acc": 0.6528
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.1241156767103406,
+      "train_acc": 0.6013777777777778,
+      "val_loss": 0.9142079722881317,
+      "val_acc": 0.6784
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.0871718187756008,
+      "train_acc": 0.6164444444444445,
+      "val_loss": 0.9129511592864991,
+      "val_acc": 0.6786
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.0578492648972406,
+      "train_acc": 0.6290888888888889,
+      "val_loss": 0.868368905544281,
+      "val_acc": 0.6876
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.01834769499037,
+      "train_acc": 0.6421777777777777,
+      "val_loss": 0.8821484337329865,
+      "val_acc": 0.6896
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.0007735090785557,
+      "train_acc": 0.6507111111111111,
+      "val_loss": 0.8258550971508026,
+      "val_acc": 0.7148
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.9734853439437019,
+      "train_acc": 0.6595333333333333,
+      "val_loss": 0.8032888650417328,
+      "val_acc": 0.7232
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.9499602423667908,
+      "train_acc": 0.6689555555555555,
+      "val_loss": 0.8021659284591675,
+      "val_acc": 0.7248
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.9346718499925402,
+      "train_acc": 0.6743555555555556,
+      "val_loss": 0.799311781167984,
+      "val_acc": 0.7212
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.9166204734272427,
+      "train_acc": 0.6786666666666666,
+      "val_loss": 0.7999658888339997,
+      "val_acc": 0.725
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.9063408320003086,
+      "train_acc": 0.6839777777777778,
+      "val_loss": 0.7799174797058106,
+      "val_acc": 0.727
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.8876088628980848,
+      "train_acc": 0.6901777777777778,
+      "val_loss": 0.7704112642288208,
+      "val_acc": 0.7406
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.8791630409876505,
+      "train_acc": 0.6930444444444445,
+      "val_loss": 0.7553483795642852,
+      "val_acc": 0.7384
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.8585684259202745,
+      "train_acc": 0.6972888888888888,
+      "val_loss": 0.7517521004676819,
+      "val_acc": 0.7386
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.8507295624203152,
+      "train_acc": 0.7012444444444444,
+      "val_loss": 0.7433553989887237,
+      "val_acc": 0.7394
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.8410803168402777,
+      "train_acc": 0.7074666666666667,
+      "val_loss": 0.7339855217933655,
+      "val_acc": 0.7456
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.8375014764997695,
+      "train_acc": 0.7051111111111111,
+      "val_loss": 0.7334530960083008,
+      "val_acc": 0.741
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.8191874697791206,
+      "train_acc": 0.7142444444444445,
+      "val_loss": 0.737176962518692,
+      "val_acc": 0.7438
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.8145200503879123,
+      "train_acc": 0.7139111111111112,
+      "val_loss": 0.7428626884937286,
+      "val_acc": 0.7406
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.8075923716015286,
+      "train_acc": 0.7163555555555555,
+      "val_loss": 0.7421603178977967,
+      "val_acc": 0.7438
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.7932916577657064,
+      "train_acc": 0.7216888888888889,
+      "val_loss": 0.7143706768035889,
+      "val_acc": 0.7466
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.7928271296501159,
+      "train_acc": 0.7241111111111111,
+      "val_loss": 0.7146991396903992,
+      "val_acc": 0.7526
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.786353469520145,
+      "train_acc": 0.7244888888888888,
+      "val_loss": 0.7499767290592194,
+      "val_acc": 0.746
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.7795272077348497,
+      "train_acc": 0.7282,
+      "val_loss": 0.7078305948734284,
+      "val_acc": 0.758
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.7705768170250786,
+      "train_acc": 0.7305777777777778,
+      "val_loss": 0.7115779915809631,
+      "val_acc": 0.756
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.7655434761471218,
+      "train_acc": 0.7326444444444444,
+      "val_loss": 0.7032525441646575,
+      "val_acc": 0.7562
+    }
+  ],
+  "epoch": 30,
+  "epochs_ran": 30,
+  "val_loss": 0.7032525441646575,
+  "val_acc": 0.7562,
+  "stop_reason": "max_epochs",
+  "trainable_parameters": 263434,
+  "checkpoint_path": "results\\models\\759cf8844e65ca735a47c435c9ce4556498f730cc04feacd23fe491a968e2f44\\attempt-1377ae9d1ec540acbd5c35b6f7f4d005\\complete.pt"
+}
